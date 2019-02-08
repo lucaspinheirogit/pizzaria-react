@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css?family=Charm');
+
+#logo{
+    font-family: 'Charm', cursive;
+    font-size: 5rem;
+    font-style: italic;
+}
+#logo::after{
+    content: " ";
+    background: url("../imagens/icons/pizza-slice.png") center no-repeat;
+    padding: 0 30px;   
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: white !important;
+    font-size: 75%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+main{
+    min-height: 400px;
+    flex: 1 0 auto;
+    padding-bottom: 1rem;
+    background: url(../imagens/fundo.jpg) no-repeat bottom;
+    background-attachment: fixed;
+    box-shadow: inset 0 7px 40px 5px rgba(0,0,0,1);
+    padding-top: 2em; 
+}
+header{
+    background-color: black;
+    color: white;
+    /* padding: 1em; */
+    position: relative;
+}
+h1,h5{
+    color: white;
+}
+
+.login{
+    align-items: end;
+    justify-content: flex-end;
+}
+#imagem img{
+    max-width: 100%;
+}
+#pizzas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pizza{
+    background-color: white;
+    text-align: center;
+    margin: 1em;
+    padding-bottom: 1em;
+    border: 1px solid rgba(0,0,0,1);
+}
+.pizza-desc .form-group{
+    padding: .5em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: black;
+    font-size: 2em;
+}
+legend{
+    font-size: 1.5em;
+}
+.pizza button{
+    font-size: 2em;
+    border: 0px;
+    border-bottom: 4px solid #777;
+    padding: .5em 1em;
+    margin-top: -4px;
+}
+.pizza button:hover{
+    border-bottom: 4px solid #777;
+}
+.pizza button:active{
+    margin-top: 0px;
+    border: 0px;
+}
+.pizza img{
+    height: 24em;
+    min-width: 38em;
+    max-width: 38em;
+}
+.nome-pizza{
+    padding: .5em;
+    background-color: black;
+}
+.nome-pizza h2 , h3{
+    color: white;
+    margin: 0.5rem 0
+}
+.custom-control-label::before, .custom-control-label::after{
+    top: 0.5rem;
+}
+footer{ 
+    background-color: black;
+    padding: 1em 0;
+    text-align: center;
+    flex-shrink: 0;
+}
+footer p{
+    margin: 0;
+    font-size: 1.25em;
+}
+.logo{
+    text-align: center;
+}
+.logo h1{
+    font-family: 'Charm', cursive;
+    font-size: 4rem;
+    padding: 1.5rem;
+    /*text-shadow: 0 0 8px #FFF;*/
+}
+a, a:hover{
+    font-size: 120%;
+    color: white;
+}
+.carrinho{
+    display: none;
+    text-align: center;
+    padding: 1em 0;
+    position: absolute;
+    right: 0;
+    top: 78%;
+    background-color: #111;
+}
+.carrinho h3{
+    padding: .5em;
+    z-index: 2;
+}
+.carrinho .btn{
+    font-size: 1.5em;
+}
+.item-carrinho{
+    padding: .5em 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: #191919;
+    margin-bottom: 1em;
+    position: relative;
+}
+.item-carrinho img{
+    width: 15em;
+    height: 12em;
+}
+.desc-item{
+    padding: .5em;
+    width: 50%;
+    text-align: center;
+}
+.desc-item h5{
+    font-size: 150%;
+}
+.remover-item{
+    color: red;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.remover-item:hover{
+    cursor: pointer;
+}
+.qtd-item{
+    color: gold;
+    font-size: 1.2em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.seta{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0em;
+    width: 0; 
+    height: 0; 
+    border-left: 3em solid transparent;
+    border-right: 3em solid transparent;
+    border-bottom: 3em solid #111;
+    transform: translateY(-75%);
+}
+.link-home:hover{
+    text-decoration: none;
+}
+nav{
+    position: relative;
+}
+nav.bg-primary{
+    background-color: #000 !important;
+}
+.nav-item{
+    margin-right: 0;
+}
+#nav-carrinho:hover, #nav-logout:hover{
+    cursor: pointer;
+}
+.nav-item a{
+    text-align: right;
+}
+
+@media only screen and (min-width: 993px){
+    .navbar-brand{
+        position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    .nav-item{
+        margin-right: 1em;
+    }
+    .nav-item:last-child{
+        margin-right: 0;
+    }
+    .seta{
+        top: 0.5em;
+        right: 12em;
+    }
+}
+
+.svg-pizza{
+    position: absolute;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-size: cover !important;
+    transition: 2s;
+}
+.sobre{
+    font-size: 1.4rem;
+    padding: 1em 1em 0 1em;
+}
+#redes-sociais{
+    margin: 4em 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+#redes-sociais li{
+    display: flex;
+    background-color: black;
+    padding: 1em;
+    font-size: 1.8rem !important;
+}
+#redes-sociais li a{
+    font-size: 100%;
+}
+#redes-sociais li a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0 0 5px #FFF;
+}
+#redes-sociais li::before{
+    margin-right: .5rem;
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+#email::before{
+    background: url(../imagens/icons/email.png) center no-repeat;
+}
+#celular::before{
+    background: url(../imagens/icons/celular.png) center no-repeat;
+}
+#github::before{
+    background: url(../imagens/icons/github.png) center no-repeat;
+}
+#linkedin::before{
+    background: url(../imagens/icons/linkedin.png) center no-repeat;
+}
+#portfolio::before{
+    background: url(../imagens/icons/portfolio.png) center no-repeat;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+#caption {
+    background-color: black;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    padding: 10px 0;
+}
+.modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+.close{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #FFF;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+} 
+.close:hover, .close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+}
+@media only screen and (max-width: 576px){
+    #caption{
+        width: 100%;
+    }
+}

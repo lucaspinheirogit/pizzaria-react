@@ -1,0 +1,117 @@
+.row-item{
+    padding: 1em 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #000;
+}
+.row-item:last-child{
+    border: 0;
+}
+.img-item{
+    height: 10em;
+    max-width: 12em;
+}
+.item{
+    padding-left: 4em;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+.row-desc{
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1em;
+}
+h2,h3,h5{
+    color: black;
+}
+h5{
+    font-size: 1.5em;
+}
+#btn_finalizar{
+    font-size: 1.5em;
+}
+main{
+    padding: 5em 0;
+}
+main h2{
+    color: white;
+    padding: 1em;
+    background-color: black;
+    margin-bottom: 2em;
+}
+main h3{
+    font-size: 140%;
+}
+.container-fluid{
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+    padding: 0;
+    padding-bottom: 2em;
+}
+.formas-pgto{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.formas-pgto li{
+    display: flex;
+    align-items: center;
+    margin: 0 2em;
+}
+.formas-pgto li h3{
+    display: flex;
+    align-items: center;
+}
+#dinheiro::before{
+    content: '';
+    background: url(../imagens/icons/money.png) no-repeat center;
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin-right: .5em;
+    background-size: 100%;
+}
+#boleto::before{
+    content: '';
+    background: url(../imagens/icons/boleto.png) no-repeat center;
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin-right: .5em;
+    background-size: 100%;
+}
+#cartao::before{
+    content: '';
+    background: url(../imagens/icons/cartao.png) no-repeat center;
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin-right: .5em;
+    background-size: 100%;
+}
+#paypal::before{
+    content: '';
+    background: url(../imagens/icons/paypal.png) no-repeat center;
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin-right: .5em;
+    background-size: 100%;
+}
+/* .custom-control-label{
+    top: -12px;
+    left: 6px;
+} */
+.custom-control-label::before{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.custom-radio .custom-control-input ~ .custom-control-label::before{
+    top: 22px;
+}
+.custom-radio .custom-control-input ~ .custom-control-label::after{
+    top: 22px;
+}
