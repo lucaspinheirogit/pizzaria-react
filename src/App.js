@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Helmet } from "react-helmet";
 import { Switch, Route } from 'react-router-dom';
 
-import './css/bootstrap.min.css';
-import './css/main.css';
+import './client/css/bootstrap.min.css';
+import './client/css/main.css';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './client/components/Header';
+import Footer from './client/components/Footer';
 
-import Home from './views/Home';
+import Home from './client/views/Home';
 
 class App extends Component {
 
