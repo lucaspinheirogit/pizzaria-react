@@ -44,8 +44,31 @@ h1,h5{
 }
 
 .login{
-    align-items: end;
-    justify-content: flex-end;
+    font-size: 200%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 2px #000;
+}
+.login form{
+    width: 400px;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login input{
+    border: 1px solid #777;
+    padding: .75em .4em;
+    min-width: 250px;
+}
+.form-control{
+    font-size: .7em;
+}
+.login h6{
+    color: #fff;
+    font-size: 65%;
 }
 #imagem img{
     max-width: 100%;
@@ -74,17 +97,18 @@ h1,h5{
 legend{
     font-size: 1.5em;
 }
-.pizza button{
+.pizza button, .login button{
     font-size: 2em;
     border: 0px;
     border-bottom: 4px solid #777;
     padding: .5em 1em;
     margin-top: -4px;
 }
-.pizza button:hover{
+.pizza button:hover, .login button:hover{
     border-bottom: 4px solid #777;
+    border-color: #777;
 }
-.pizza button:active{
+.pizza button:active, .login button:active{
     margin-top: 0px;
     border: 0px;
 }
@@ -104,6 +128,10 @@ legend{
 .custom-control-label::before, .custom-control-label::after{
     top: 0.5rem;
 }
+.login button{
+    font-size: 1em !important;
+    padding: .25em 1em;
+} 
 footer{ 
     background-color: black;
     padding: 1em 0;

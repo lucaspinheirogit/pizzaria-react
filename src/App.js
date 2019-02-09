@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Helmet } from "react-helmet";
 import { Switch, Route } from 'react-router-dom';
 
-import './client/css/bootstrap.min.css';
-import './client/css/main.css';
+import './css/bootstrap.min.css';
+import './css/main.css';
 
-import Header from './client/components/Header';
-import Footer from './client/components/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-import Home from './client/views/Home';
+import Home from './views/Home';
+import Login from './views/Login';
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ class App extends Component {
         <main>
           <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
             </Switch>
         </main>
         <Footer />

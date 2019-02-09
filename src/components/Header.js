@@ -6,7 +6,7 @@ class Header extends Component {
         return (
             <header>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-                    <Link className="navbar-brand mx-auto" to='/home'>
+                    <Link className="navbar-brand mx-auto" to='/'>
                         <h1 id="logo">Pizzaria</h1>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -16,13 +16,13 @@ class Header extends Component {
                     <div className="collapse navbar-collapse justify-content-end " id="navbarColor01">
                         <ul className="navbar-nav ">
                             <li className="nav-item active">
-                                <a id="nav-login" className="nav-link" href="./html/login.html">Login</a>
+                                <Link id="nav-login" className="nav-link" to="/login">Login</Link>
                             </li>
                             <li className="nav-item active">
-                                <a href='home' id="nav-carrinho" className="nav-link" >Meu Carrinho</a>
+                                <Link id="nav-carrinho" className="nav-link" to='/carrinho'  >Carrinho( )</Link>
                             </li>
                             <li className="nav-item active">
-                                <a href='home' id="nav-logout" className="nav-link" >LogOut</a>
+                                <Link id="nav-logout" className="nav-link" to='/logout' >Sair</Link>
                             </li>
                         </ul>
                     </div>
