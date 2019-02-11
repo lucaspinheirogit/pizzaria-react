@@ -4,12 +4,30 @@ import Pizza from '../components/Pizza';
 
 class Home extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      pizzas: []
+    }
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:5000/pizzas`)
+      .then(response => response.json())
+      .then(pizzas => {
+        console.log(pizzas);
+
+        this.setState({
+          pizzas
+        })
+      })
+  }
+
   render() {
     return (
-      <section id='pizzas' className='container'>
-        <Pizza id='1' nome='Bacon' img='pizza-bacon.jpg' preco_p='20' preco_m='25' preco_g='30' />
-        <Pizza id='2' nome='Calabresa' img='pizza-calabresa.jpg' preco_p='30' preco_m='35' preco_g='40' />
-      </section>
+      this.state.pizzas.map(pizza => {
+        return <Pizza key={pizza.id} {...pizza} ></Pizza>
+      })
     );
   }
 }

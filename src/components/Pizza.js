@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Pizza extends Component {
 
     render() {
-        var { id, nome, img, preco_p, preco_m, preco_g, } = this.props;
+        console.log("IMG: " + this.props.imagem);
+
+        var { id, nome, imagem, preco_p, preco_m, preco_g, } = this.props;
         return (
             <div className="pizza">
-                <img src={require('../imagens/'+img)} />
+                <img alt='pizza' src={require(`../imagens/${imagem}`)} />
                 <div className="pizza-desc">
                     <div className="nome-pizza">
                         <h2>{nome}</h2>
@@ -19,7 +22,7 @@ class Pizza extends Component {
                             <h4> Grande - R$ {preco_g} </h4>
                         </div>
                         <button style={{ marginRight: '.5em' }} className="btn-primary">Comprar</button>
-                        <button style={{ marginLeft: '.5em' }} className="btn-primary">+Detalhes</button>
+                        <button style={{ marginLeft: '.5em' }} className="btn-primary"><Link style={{ fontSize: '100%' }} to={`/detalhes/${id}`}>+Detalhes</Link></button>
                     </form>
                 </div>
 

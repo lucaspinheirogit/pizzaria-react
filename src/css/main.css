@@ -97,18 +97,19 @@ h1,h5{
 legend{
     font-size: 1.5em;
 }
-.pizza button, .login button{
+button{
     font-size: 2em;
     border: 0px;
     border-bottom: 4px solid #777;
+    border-color: #777 !important;
     padding: .5em 1em;
     margin-top: -4px;
 }
-.pizza button:hover, .login button:hover{
+button:hover, button:hover{
     border-bottom: 4px solid #777;
-    border-color: #777;
+    border-color: #777 !important;
 }
-.pizza button:active, .login button:active{
+button:active, .button:active{
     margin-top: 0px;
     border: 0px;
 }
@@ -380,4 +381,95 @@ nav.bg-primary{
     #caption{
         width: 100%;
     }
+}
+
+
+#detalhes{
+    display: flex;
+    background-color: white;
+    padding: 2em;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.foto{
+    flex:1;
+}
+.foto img{
+    border: 1px solid #777;
+}
+.informacoes{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.informacoes h3 { 
+    color: black;
+}
+.informacoes .button-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.button-group button{
+    margin: .45em;
+}
+.quantidade{
+    display: flex;
+    justify-content: center;
+    margin: 3em 0;
+    flex-direction: row;
+}
+@media only screen and (min-width: 576px){
+    .quantidade{
+        flex-direction: column;
+        align-items: center;
+    }
+    #detalhes{
+        flex-direction: row;
+    }
+}
+@media only screen and (min-width: 768px){
+    .quantidade{
+        flex-direction: row;
+    }
+}
+
+.quantidade input{
+    width: 75px;
+    font-size: 200%;
+    padding: 0 .4em;
+    min-height: 32px
+}
+
+.rc-input-number{
+    position: relative;
+}
+.rc-input-number-handler-wrap{
+    position: absolute;
+    right: -4px;
+    font-size: 150%;
+}
+
+.rc-input-number-handler-wrap span div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 16px;
+    border: 1px solid #afafaf;
+}
+
+.rc-input-number-handler-wrap span:first-child div{
+    border-left: 0;
+    border-bottom: 0;
+}
+.rc-input-number-handler-wrap span:last-child div{
+    border-left: 0;
+}
+
+.rc-input-number-handler-wrap span div:hover{
+    cursor: pointer;
 }
