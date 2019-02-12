@@ -22,7 +22,11 @@ class Pizza extends Component {
                             <h4> Grande - R$ {preco_g} </h4>
                         </div>
                         <button style={{ marginRight: '.5em' }} className="btn-primary">Comprar</button>
-                        <button style={{ marginLeft: '.5em' }} className="btn-primary"><Link style={{ fontSize: '100%' }} to={`/detalhes/${id}`}>+Detalhes</Link></button>
+                        <Link style={{ fontSize: '100%' }} to={`/detalhes/${id}`}>
+                        <button style={{ marginLeft: '.5em' }} className="btn-primary">
+                        +Detalhes
+                        </button>
+                        </Link>
                     </form>
                 </div>
 

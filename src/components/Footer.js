@@ -21,11 +21,11 @@ class Footer extends Component {
                     projeto:
         </p>
                 <ul id="redes-sociais">
-                    <li id="portfolio"><a target="_blank" href="#">Portfólio</a></li>
+                    <li id="portfolio"><a target="_blank" href="321">Portfólio</a></li>
                     <li id="email">lucaspinheiroifsul@gmail.com</li>
                     <li id="celular">(51) 99935-1344</li>
-                    <li id="github"><a target="_blank" href="https://github.com/lucaspinheirogit">GitHub</a></li>
-                    <li id="linkedin"><a target="_blank" href="https://www.linkedin.com/in/lucas-pinheiro-aab282166/">LinkedIn</a></li>
+                    <li id="github"><a target="_blank" rel="noopener noreferrer" href="https://github.com/lucaspinheirogit">GitHub</a></li>
+                    <li id="linkedin"><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/lucas-pinheiro-aab282166/">LinkedIn</a></li>
                 </ul>
                 <p style={{ fontSize: '170%' }}>Desenvolvido por Lucas Pinheiro&copy;</p>
             </footer>

@@ -473,3 +473,13 @@ nav.bg-primary{
 .rc-input-number-handler-wrap span div:hover{
     cursor: pointer;
 }
+button:hover{
+    cursor: pointer;
+}
+
+.show{
+    display: '';
+}
+.hidden{
+    display: none;
+}

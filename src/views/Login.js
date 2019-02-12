@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+var gif = require('../imagens/gif/loading.svg')
+
 class Login extends Component {
 
     constructor() {
         super();
         this.state = {
+            loading: false,
             email: '',
             senha: '',
             mensagem: ''
@@ -14,6 +17,9 @@ class Login extends Component {
 
     enviaForm(evt) {
         evt.preventDefault();
+        this.setState({
+            loading: true
+        })
         let dados = {
             email: this.state.email,
             senha: this.state.senha
@@ -26,14 +32,21 @@ class Login extends Component {
             body: JSON.stringify(dados)
         })
             .then(response => {
+                this.setState({
+                    loading: false
+                })
                 if (!response.ok) {
-                    this.setState({
-                        mensagem: "Usuário e/ou senha incorretos"
-                    })
+                    throw new Error();
                 } else {
-                    this.props.history.push("/");
+                    return response.json();
                 }
+            }).then(token => {
+                localStorage.setItem("token", token)
+                this.props.history.push("/");
             })
+            .catch(erro => this.setState({
+                mensagem: "Usuário e/ou Senha incorretos"
+            }))
     }
 
     setValue(event, input) {
@@ -47,6 +60,7 @@ class Login extends Component {
         return (
             <div className="login">
                 <form onSubmit={(evt) => this.enviaForm(evt)}>
+                    <h3>Login</h3>
                     <fieldset>
                         <div className="form-group">
                             <label htmlFor="email">Email: </label>
@@ -57,7 +71,8 @@ class Login extends Component {
                             <input onChange={(evt) => this.setValue(evt, 'senha')} type="password" className="form-control" id="senha" name="senha" placeholder="Digite sua senha..." />
                         </div>
                     </fieldset>
-                    <button type="submit" className="btn-secondary">Login</button>
+                    <button type="submit" className={this.state.loading ? 'hidden' : 'show btn-secondary'}>Login</button>
+                    <img alt="loading gif..." src={gif} className={this.state.loading ? 'show' : 'hidden'} />
                     <span style={{ color: 'red' }}>{this.state.mensagem}</span>
                 </form>
                 <h6>Ainda não é cadastrado?</h6>

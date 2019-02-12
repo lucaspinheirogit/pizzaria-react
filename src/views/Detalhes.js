@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import InputNumber from 'rc-input-number';
 
@@ -37,8 +37,6 @@ class Detalhes extends Component {
                     preco_m: resposta[0].preco_m,
                     preco_g: resposta[0].preco_g
                 })
-                console.log(this.state);
-
             })
     }
 
@@ -47,8 +45,39 @@ class Detalhes extends Component {
         this.setState({ quantidade: value });
     }
 
+    adicionaCarrinho(){
+        console.log("adicionando ao carrinho");
+        
+        let dados = {
+            id_produto: this.state.id,
+            quantidade: this.state.quantidade,
+            tamanho: 'grande',
+            preco_unit: 22
+        }
+
+        fetch("http://localhost:5000/carrinho", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            },
+            body: JSON.stringify(dados)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error();
+                } else {
+                    return response.json();
+                }
+            }).then(result => {
+                console.log(result); 
+            })
+            .catch(erro => console.log(erro));
+            
+    }
+
     render() {
-        let { id, img, nome, preco_p, preco_m, preco_g } = this.state;
+        let { img, nome, preco_p, preco_m, preco_g } = this.state;
         const upHandler = (<div style={{ color: 'black' }}>+</div>);
         const downHandler = (<div style={{ color: 'black' }}>-</div>);
         return (
@@ -82,7 +111,7 @@ class Detalhes extends Component {
                     </div>
                     <div className="button-group">
                         <button className="btn-primary">Comprar</button>
-                        <button className="btn-primary">Adicionar ao Carrinho</button>
+                        <button onClick={() => this.adicionaCarrinho()} className="btn-primary">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
